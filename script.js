@@ -29,7 +29,7 @@ input.type = "text"
 
 input.id = "searchBar"
 input.name = "searchbox"
-input.placeholder = "Search for Your Cat"
+input.placeholder = "Search Your Cat"
 input.onkeyup = "search()"
 
 div.append(input);
@@ -50,11 +50,11 @@ div2.append(ul);
 
 
 //toggle button
-
+/* 
 const toggle = document.createElement("button");
 toggle.id = "toggle"
 toggle.textContent = "Dark Mode"
-body.append(toggle);
+body.append(toggle); */
 
 
 
@@ -129,9 +129,9 @@ function my_cats(elem) {
 
             <li class="items">
                 <a href="https://cataas.com/cat/${item.id}">
-                <img src="https://cataas.com/cat/${item.id}"><br><br> <span class="badge badge-pill badge-dark">${item.tags}</span></a> </img>
-                    
-                                                          
+                <img src="https://cataas.com/cat/${item.id}"><br><br> <span class="badge badge-pill badge-dark">${item.tags}</span></a>
+                 </img>
+                                                                          
                              
             </li>
             

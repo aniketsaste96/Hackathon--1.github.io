@@ -10,6 +10,9 @@
 }
 
 /* set anchor tag text properties */
+input {
+  padding: 20px;
+}
 
 img {
   border-radius: 20px;
@@ -20,6 +23,9 @@ img {
 }
 h1 {
   text-align: center;
+  /* text-shadow: 12px 12px black; */
+  font-family: "Georgia";
+  font-weight: 800px;
 }
 a {
   font-size: 22px;
