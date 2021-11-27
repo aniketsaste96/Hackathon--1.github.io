@@ -29,7 +29,7 @@ input.type = "text"
 
 input.id = "searchBar"
 input.name = "searchbox"
-input.placeholder = "Search Your Cat"
+input.placeholder = "Type Here..."
 input.onkeyup = "search()"
 
 div.append(input);
@@ -74,12 +74,19 @@ var submit = document.querySelector("#btn")
 
 
 //keyup eventListener when we release button (listen each word)
+
+
+
+
+
 const search = SearchBar.addEventListener("keyup", () => {
     var input = document.getElementById("searchBar").value;
     var li = document.getElementsByTagName("li");
     let innerText = document.getElementsByTagName("li");
 
     //Make SearchBar Operational 
+
+
     function myFunction() {
         var input, filter, ul, innerText, a, i, txtValue;
         input = document.getElementById("myInput");
@@ -102,55 +109,80 @@ const search = SearchBar.addEventListener("keyup", () => {
 })
 
 
+
+
+
+
 //initializing URL from where we want to fetch data
 var url = " https://cataas.com/api/cats";
 
 
+/*
 
-
-function getData() {
+async function getData() {
     fetch(url)
         .then((result) => result.json())
         .then((data) => my_cats(data))
         .catch((error) => (error))
 
 }
-
 getData();
 
 
+*/
 
 
-//Append fetched data to body 
-function my_cats(elem) {
-    //Iterate through JSON data
-    let Cat_data = elem.map(item => {
-        return `
+
+
+
+
+//Using async await and ERROR handling....
+const fetchData = async () => {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+
+
+        let realdata = my_cats(data);
+        //Append fetched data to body 
+        function my_cats(data) {
+            //Iterate through JSON data
+
+            let Cat_data = data.map(item => {
+                return `
 
             <li class="items">
                 <a href="https://cataas.com/cat/${item.id}">
                 <img src="https://cataas.com/cat/${item.id}"><br><br> <span class="badge badge-pill badge-dark">${item.tags}</span></a>
-                 </img>
-                                                                          
+                 </img>                                                                        
                              
             </li>
             
             
         `
 
-    })
+            })
 
-    //add returned data of id after loop to catch_list
-    cat_List.innerHTML = Cat_data;
-}
+            //add returned data of id after loop to catch_list
+            cat_List.innerHTML = Cat_data;
+        }
 
 
-//mode toggle
 
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-}
+    } catch (err) {
+        console.log("Opps Something Went Wrong!!!")
+    }
+};
+
+fetchData();
+
+
+
+
+
+
+
 
 
 

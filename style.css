@@ -9,6 +9,10 @@
   /* align-items: center; */
 }
 
+body {
+  background-color: #e1eedd;
+} /* #e1eedd; */
+
 /* set anchor tag text properties */
 input {
   padding: 20px;
@@ -20,6 +24,7 @@ img {
 #searchwrapper {
   align-items: center;
   margin-left: 32%;
+  padding: 5px;
 }
 h1 {
   text-align: center;
@@ -72,7 +77,7 @@ img {
 }
 .items:hover img {
   transform: translateY(0) scale(1.2);
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 30px 70px 4px;
+  box-shadow: rgba(5, 5, 5, 0.56) 30px 30px 70px 10px;
 }
 
 @media screen and (min-width: 760px) {
