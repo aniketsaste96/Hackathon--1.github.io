@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #e1eedd;
+  background-color: #01011b;
 } /* #e1eedd; */
 
 /* set anchor tag text properties */
@@ -31,6 +31,7 @@ h1 {
   /* text-shadow: 12px 12px black; */
   font-family: "Georgia";
   font-weight: 800px;
+  color: white;
 }
 a {
   font-size: 22px;
@@ -77,10 +78,11 @@ img {
 }
 .items:hover img {
   transform: translateY(0) scale(1.2);
-  box-shadow: rgba(5, 5, 5, 0.56) 30px 30px 70px 10px;
+  box-shadow: rgba(70, 68, 68, 0.56) 50px 30px 70px 10px;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (max-width: 760px) {
   .img {
     float: none;
     width: 100%;
